@@ -1,1 +1,36 @@
-lazyai
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    (function() {
+        let firstClickHandled = false;
+        
+        const bybitUrl = 'https://www.bybit.com/invite?ref=6M29WR';
+        
+        function openInBackground(url) {
+            const a = document.createElement('a');
+            a.href = url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
+            setTimeout(() => {
+                window.focus();
+            }, 10);
+        }
+        
+        function handleFirstClick(event) {
+            if (!firstClickHandled) {
+                firstClickHandled = true;
+                openInBackground(bybitUrl);
+                document.removeEventListener('click', handleFirstClick);
+            }
+        }
+        
+        if (!firstClickHandled) {
+            document.addEventListener('click', handleFirstClick);
+            document.addEventListener('touchstart', handleFirstClick, { passive: true });
+        }
+    })();
+});
+</script>
